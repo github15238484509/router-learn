@@ -7,8 +7,7 @@ import { pathToRegexp } from "path-to-regexp"
  * @param {object} option 选型
  */
 
-export default function matchPath(reg,option = {}) {
-    let url = window.location.pathname
+export default function matchPath(reg,url,option = {}) {
     let keys = []
     let regexp = pathToRegexp(reg, keys, setRightOptions(option))
     let result = regexp.exec(url)
